@@ -12,6 +12,8 @@ public class BoardPage {
     private By boardButton = By.xpath("//button[1]");
     private By listButton = By.xpath("//button[2]");
 
+    private By innerMenu = By.xpath("//mat-sidenav");
+
     public void clickMenu() {
         driver.findElement(menuSwitch).click();
     }
@@ -24,5 +26,9 @@ public class BoardPage {
     public ListPage clickList() {
         driver.findElement(listButton).click();
         return new ListPage(driver);
+    }
+
+    public boolean checkInnerMenu() {
+        return driver.findElement(innerMenu).isDisplayed();
     }
 }
